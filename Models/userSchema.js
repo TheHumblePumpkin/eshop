@@ -13,11 +13,18 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true,
+        required: function() {
+            // Only required when creating a new user
+            return this.isNew;
+        }
     },
     phone: {
         type: String,
         required: true,
+    },
+    profilePic: {
+        type: String,
+        default: ''
     },
     isAdmin: {
         type: Boolean,
