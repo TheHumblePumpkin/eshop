@@ -9,6 +9,7 @@ const categoryRouter = require('./Routes/categoryRouter');
 const userRouter = require('./Routes/userRouter');
 const cartRouter = require('./Routes/cartRouter'); 
 const orderRouter = require('./Routes/orderRouter'); 
+const userProfileRouter = require('./Routes/userProfileRouter');
 
 // Middleware
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/cart', cartRouter);
 app.use('/api/v1/orders', orderRouter); 
+app.use('/api/v1/user-profile', userProfileRouter); 
 
 
 app.use((req, res) => {
